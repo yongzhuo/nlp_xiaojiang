@@ -10,3 +10,5 @@ jieba==0.39
 xlrd==1.2.0
 sklearn
 pathlib
+translate
+PyExecJS
