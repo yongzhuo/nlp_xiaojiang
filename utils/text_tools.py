@@ -286,6 +286,30 @@ def is_number_or_english(text):
     except:
         return False
 
+def jieba_cut(text):
+    """
+      Jieba cut
+    :param text: input sentence
+    :return: list
+    """
+    return list(jieba.cut(text, cut_all=False, HMM=True))
+
+
+def judge_translate_english(sen_org, sen_tra):
+    """
+      判断翻译后句子带英文的情况
+    :param sen_org: str, 原始句子
+    :param sen_tra: str, 翻译后的句子
+    :return: boolean, True or False
+    """
+    # sen_org_cut = jieba_cut(sen_org)
+    sen_tra_cut = jieba_cut(sen_tra)
+    for sen_tra_cut_one in sen_tra_cut:
+        if is_total_english(sen_tra_cut_one) and sen_tra_cut_one not in sen_org:
+            return False
+    return True
+
+
 #todo #句子改写，同义词替换，去停用词等
 
 
