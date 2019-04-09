@@ -1,0 +1,12 @@
+python-Levenshtein==0.12.0
+fuzzywuzzy==0.17.0
+openpyxl==2.6.2
+pandas==0.24.2
+xpinyin==0.5.6
+numpy==1.16.1
+gensim==3.7.1
+pyemd==0.5.1
+jieba==0.39
+xlrd==1.2.0
+sklearn
+pathlib
