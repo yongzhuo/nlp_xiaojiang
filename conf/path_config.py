@@ -37,3 +37,6 @@ matrix_ques_part_path_char = projectdir + '/Data/sentence_vec_encode_char/1.txt'
 
 # word2vec select
 word2_vec_path = w2v_model_wiki_word_path if os.path.exists(w2v_model_wiki_word_path) else w2v_model_merge_short_path
+
+# stanford_corenlp_full_path
+stanford_corenlp_full_path = "Y:/segment/stanford-corenlp-full-2018-10-05"
