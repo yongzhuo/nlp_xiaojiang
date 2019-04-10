@@ -12,3 +12,4 @@ sklearn
 pathlib
 translate
 PyExecJS
+stanfordcorenlp
