@@ -1,0 +1,193 @@
+2019-04-10 09:56:32,577 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:56:43,770 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:56:44,394 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:56:50,818 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:07,254 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,117 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+大漠帝国确实很喜欢JY   大漠帝国喜欢JY
+2019-04-10 09:57:20,128 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,138 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,151 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,180 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+JY也喜欢大漠帝国哦！   JY！大漠帝国
+2019-04-10 09:57:20,196 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,204 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,216 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,255 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,271 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,283 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+这个工程的作者是momo   工程作者是momo
+2019-04-10 09:57:20,291 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,309 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,343 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,367 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+momo是一个无门无派的浪人   momo是浪人
+2019-04-10 09:57:20,385 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,393 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,401 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,413 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,429 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,442 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+只有自信的程序员才能把握未来   只有程序员把握未来
+2019-04-10 09:57:20,450 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:20,460 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,518 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,539 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+主干识别可以提高检索系统的智能   主干识别提高检索智能
+2019-04-10 09:57:24,559 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,567 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,577 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,587 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,601 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,611 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+打更的住在这里   打更这里
+2019-04-10 09:57:24,619 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,626 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,634 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,644 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+人民的名义   名义
+2019-04-10 09:57:24,654 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,660 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,667 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,677 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,686 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,695 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+名词短语   短语
+2019-04-10 09:57:24,702 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,709 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,718 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,739 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+我一直很喜欢你   我喜欢你
+2019-04-10 09:57:24,753 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,761 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,768 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,778 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,790 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+你被我喜欢   我喜欢你
+2019-04-10 09:57:24,799 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,807 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,816 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,829 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,894 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+美丽又善良的你被卑微的我深深的喜欢着……   卑微我喜欢美丽你
+2019-04-10 09:57:24,916 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,924 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,932 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,943 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,961 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+搜索momo可以找到我的博客   搜索momo找到我博客
+2019-04-10 09:57:24,973 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:24,982 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,023 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,036 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,050 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,063 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+静安区体育局2013年部门决算情况说明   静安区情况说明
+2019-04-10 09:57:25,070 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,079 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,089 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,104 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+这类算法在有限的一段时间内终止   这算法终止
+2019-04-10 09:57:25,118 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,127 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,137 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,149 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,186 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+为什么在espace输入名字的部分拼音搜索不到相关的联系人？   输入搜索联系人名字
+2019-04-10 09:57:25,219 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,230 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,240 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,250 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,265 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+espace安装失败报错   espace安装
+2019-04-10 09:57:25,278 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,291 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,300 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,312 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,323 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+espace3.0无法批量导入   espace导入
+2019-04-10 09:57:25,336 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,343 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,350 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,358 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,373 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,384 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+espace拼音模糊搜索   搜索
+2019-04-10 09:57:25,393 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,403 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,417 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,499 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+在运营数据中心内，ITSM系统的用户添加和更改了哪种类型的服务？   系统用户添加类型服务
+2019-04-10 09:57:25,525 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,534 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,546 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,563 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,595 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,624 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+在ITSM系统中申请服务请求时，流转过程中，如何在当前环节转至同组其他人处理工单？   申请工单
+2019-04-10 09:57:25,630 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,637 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,644 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,652 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+红旗飘   红旗飘
+2019-04-10 09:57:25,660 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,666 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,672 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,679 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,686 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,693 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+柳丝长   柳丝长
+2019-04-10 09:57:25,701 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,707 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,715 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,723 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,734 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+乐队奏国歌   乐队奏国歌
+2019-04-10 09:57:25,741 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,750 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,759 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,771 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+红扑扑的朝霞露出了笑脸   红扑扑朝霞露出笑脸
+2019-04-10 09:57:25,785 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,792 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,800 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,814 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,827 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,843 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+初升的太阳照耀着峻峭的群山   升太阳照耀峻峭群山
+2019-04-10 09:57:25,850 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,858 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,868 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,885 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+一个农人在路上看见一条冻僵了的蛇   一农人看见一蛇
+2019-04-10 09:57:25,907 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,914 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,921 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,929 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:57:25,939 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+我打量了他一眼   我打量他
+请输入sentence：
+你谁呀
+2019-04-10 09:58:16,299 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:16,310 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:16,317 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:16,324 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:16,335 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+你谁呀
+请输入sentence：
+呵呵呵
+2019-04-10 09:58:20,423 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:20,432 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:20,439 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:20,447 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:20,454 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+呵呵呵
+请输入sentence：
+大名不行了，跑路吧
+2019-04-10 09:58:29,635 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ssplit,tokenize', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:29,642 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:29,651 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'ner', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:29,660 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'pos,parse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+2019-04-10 09:58:29,671 - corenlp.py[line:237] - INFO: {'properties': "{'annotators': 'depparse', 'outputFormat': 'json'}", 'pipelineLanguage': 'zh'}
+大名跑路
+请输入sentence：
