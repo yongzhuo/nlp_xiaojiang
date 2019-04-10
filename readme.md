@@ -5,7 +5,7 @@
     - 回译（效果比较好）
     - EDA（同义词替换、插入、交换和删除）（）效果还行
     - HMM-marko（质量较差）
-    - syntax（依存句法、句法、语法书）todo
+    - syntax（依存句法、句法、语法书）
     
 # ChatBot
     - 检索式ChatBot
