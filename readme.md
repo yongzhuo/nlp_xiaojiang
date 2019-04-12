@@ -57,3 +57,17 @@
     - pyemd
     - pyhanlp
         - 下好依赖JPype1-0.6.3-cp36-cp36m-win_amd64.whl
+  
+# 参考/感谢
+    - eda_chinese：  https://github.com/zhanlaoban/eda_nlp_for_Chinese
+    - 主谓宾提取器：   https://github.com/hankcs/MainPartExtractor
+    - HMM生成句子：   https://github.com/takeToDreamLand/SentenceGenerate_byMarkov
+    - 同义词等：      https://github.com/fighting41love/funNLP/tree/master/data/
+    - 小牛翻译：      http://www.niutrans.com/index.html
+    
+# 其他资料
+    - NLP数据增强汇总：                      https://github.com/quincyliang/nlp-data-augmentation
+    - 知乎NLP数据增强话题：                   https://www.zhihu.com/question/305256736/answer/550873100
+    - chatbot_seq2seq_seqGan（比较好用）：    https://github.com/qhduan/just_another_seq2seq
+    - 自己动手做聊天机器人教程:                https://github.com/warmheartli/ChatBotCourse
+
