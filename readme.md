@@ -27,11 +27,26 @@
         - sentence_sim_feature：计算两个文本的相似度或者距离，例如qq（问题和问题），或者qa（问题和答案）
 
 # run(可以在win10下,pycharm下运行)
-  - 1.创建tf-idf文件等（运行2需要先跑1）:  python cut_td_idf.py
-  - 2.计算两个句子间的各种相似度，先计算一个预定义的，然后可输入自定义的（先跑1）:  python sentence_sim_feature.py
-  - 3.chatbot_1跑起来(fuzzy检索-没)（独立）：python chatbot_fuzzy.py
-  - 4.chatbot_2跑起来(句向量检索-词)（独立）：python chatbot_sentence_vec_by_word.py
-  - 5.chatbot_3跑起来(句向量检索-字)（独立）：python chatbot_sentence_vec_by_char.py
+  - 1.创建tf-idf文件等（运行2需要先跑1）:      
+                                       ```
+                                       python cut_td_idf.py
+                                       ```
+  - 2.计算两个句子间的各种相似度，先计算一个预定义的，然后可输入自定义的（先跑1）:  
+                                       ```
+                                       python sentence_sim_feature.py
+                                       ```
+  - 3.chatbot_1跑起来(fuzzy检索-没)（独立）：    
+                                       ```
+                                       python chatbot_fuzzy.py
+                                       ```
+  - 4.chatbot_2跑起来(句向量检索-词)（独立）：    
+                                       ```
+                                       python chatbot_sentence_vec_by_word.py
+                                       ```
+  - 5.chatbot_3跑起来(句向量检索-字)（独立）：    
+                                       ```
+                                       python chatbot_sentence_vec_by_char.py
+                                       ```
   - 6.数据增强（eda)：                     python enhance_eda.py
   - 7.数据增强（marko）:                   python enhance_marko.py
   - 8.数据增强（translate_account）:       python translate_tencent_secret.py
@@ -52,22 +67,22 @@
 # requestments.txt
     - python_Levenshtei
         - 调用Levenshtein，我的python是3.6，
-        - 打开其源文件https://www.lfd.uci.edu/~gohlke/pythonlibs/
+        - 打开其源文件[https://www.lfd.uci.edu/~gohlke/pythonlibs/](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
         - 查找python_Levenshtein-0.12.0-cp36-cp36m-win_amd64.whl下载即可
     - pyemd
     - pyhanlp
         - 下好依赖JPype1-0.6.3-cp36-cp36m-win_amd64.whl
   
 # 参考/感谢
-    - eda_chinese：   [https://github.com/zhanlaoban/eda_nlp_for_Chinese](https://github.com/zhanlaoban/eda_nlp_for_Chinese)
-    - 主谓宾提取器：   https://github.com/hankcs/MainPartExtractor
-    - HMM生成句子：   https://github.com/takeToDreamLand/SentenceGenerate_byMarkov
-    - 同义词等：      https://github.com/fighting41love/funNLP/tree/master/data/
-    - 小牛翻译：      http://www.niutrans.com/index.html
+* eda_chinese：[https://github.com/zhanlaoban/eda_nlp_for_Chinese](https://github.com/zhanlaoban/eda_nlp_for_Chinese)
+* 主谓宾提取器：[https://github.com/hankcs/MainPartExtractor](https://github.com/hankcs/MainPartExtractor)
+* HMM生成句子：[https://github.com/takeToDreamLand/SentenceGenerate_byMarkov](https://github.com/takeToDreamLand/SentenceGenerate_byMarkov)
+* 同义词等：[https://github.com/fighting41love/funNLP/tree/master/data/](https://github.com/fighting41love/funNLP/tree/master/data/)
+* 小牛翻译：[http://www.niutrans.com/index.html](http://www.niutrans.com/index.html)
     
 # 其他资料
-    - NLP数据增强汇总：                      https://github.com/quincyliang/nlp-data-augmentation
-    - 知乎NLP数据增强话题：                   https://www.zhihu.com/question/305256736/answer/550873100
-    - chatbot_seq2seq_seqGan（比较好用）：    https://github.com/qhduan/just_another_seq2seq
-    - 自己动手做聊天机器人教程:                https://github.com/warmheartli/ChatBotCourse
+* NLP数据增强汇总:[https://github.com/quincyliang/nlp-data-augmentation](https://github.com/quincyliang/nlp-data-augmentation)
+* 知乎NLP数据增强话题:[https://www.zhihu.com/question/305256736/answer/550873100](https://www.zhihu.com/question/305256736/answer/550873100)
+* chatbot_seq2seq_seqGan（比较好用）：[https://github.com/qhduan/just_another_seq2seq](https://github.com/qhduan/just_another_seq2seq)
+* 自己动手做聊天机器人教程: [https://github.com/warmheartli/ChatBotCourse](https://github.com/warmheartli/ChatBotCourse)
 
