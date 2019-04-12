@@ -67,7 +67,7 @@
 # requestments.txt
     - python_Levenshtei
         - 调用Levenshtein，我的python是3.6，
-        - 打开其源文件[https://www.lfd.uci.edu/~gohlke/pythonlibs/](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
+        - 打开其源文件: https://www.lfd.uci.edu/~gohlke/pythonlibs/
         - 查找python_Levenshtein-0.12.0-cp36-cp36m-win_amd64.whl下载即可
     - pyemd
     - pyhanlp
