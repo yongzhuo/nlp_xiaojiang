@@ -1,5 +1,8 @@
-# -*- coding:utf-8 -*-
-# -*- created by: moyongzhuo -*-
+# -*- coding: UTF-8 -*-
+# !/usr/bin/python
+# @time     :2019/4/1 10:35
+# @author   :Mo
+# @function :calculate Similarity of text and vector, which are tf-idf and pinyin
 
 
 from FeatureProject.distance_text_or_vec import euclidean_distance, cosine_distance, manhattan_distance, euclidean_distance, jaccard_similarity_coefficient_distance
