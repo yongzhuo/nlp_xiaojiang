@@ -2,7 +2,7 @@
 # !/usr/bin/python
 # @time     :2019/4/4 10:00
 # @author   :Mo
-# @function :
+# @function :calculate distances of Varity
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from utils.text_tools import txtRead, get_syboml, strQ2B
@@ -324,7 +324,3 @@ if __name__ == '__main__':
     print(num_of_common_sub_str(str1_test, str2_test))
     print(normalization(vec1_test))  # 归一化（0-1）
     print(z_score(vec1_test))  # 标准化（0附近，正负）
-
-    # data_path = 'D:/workspace/python/bitbucket/nlp_model_v1.0/nlp_model/models/word_feature/sim_data/'
-    # tok_TD_IDF(data_path)
-    # tok_TD_IDF_pinyin(data_path)
