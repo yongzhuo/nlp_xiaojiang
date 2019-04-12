@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # !/usr/bin/python
 # @time     :2019/4/1 10:35
-# @author   :Mo
+# @author   :most of zhanlaoban; some of mo(gen some filter).     main code is there: https://github.com/zhanlaoban/eda_nlp_for_Chinese
 # @function :enhance text by eda, eda is replace, insert, swap, delete
 
 
