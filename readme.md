@@ -59,10 +59,10 @@
         - 下好依赖JPype1-0.6.3-cp36-cp36m-win_amd64.whl
   
 # 参考/感谢
-    - eda_chinese：  https://github.com/zhanlaoban/eda_nlp_for_Chinese
-    - 主谓宾提取器：   https://github.com/hankcs/MainPartExtractor
-    - HMM生成句子：   https://github.com/takeToDreamLand/SentenceGenerate_byMarkov
-    - 同义词等：      https://github.com/fighting41love/funNLP/tree/master/data/
+    - eda_chinese：   [https://github.com/zhanlaoban/eda_nlp_for_Chinese](https://github.com/zhanlaoban/eda_nlp_for_Chinese)
+    - 主谓宾提取器：   https://github.com/hankcs/MainPartExtractor
+    - HMM生成句子：   https://github.com/takeToDreamLand/SentenceGenerate_byMarkov
+    - 同义词等：      https://github.com/fighting41love/funNLP/tree/master/data/
     - 小牛翻译：      http://www.niutrans.com/index.html
     
 # 其他资料
