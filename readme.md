@@ -53,7 +53,9 @@
   - 8.数据增强（translate_account）:       python translate_tencent_secret.py
   - 9.数据增强（translate_tools）:         python translate_translate.py
   - 10.数据增强（translate_web）:          python translate_google.py
-
+  - 11.数据增强（augment_seq2seq）:        先跑 python extract_char_webank.py生成数据，
+                                          再跑 python train_char_anti.py
+                                          然后跑 python predict_char_anti.py
 # Data
     - chinese_vector
         - 截取的部分word2vec训练词向量（自己需要下载全效果才会好）
