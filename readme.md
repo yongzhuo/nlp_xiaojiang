@@ -3,9 +3,10 @@
 
 # AugmentText
     - 回译（效果比较好）
-    - EDA（同义词替换、插入、交换和删除）（）效果还行
+    - EDA（同义词替换、插入、交换和删除）（效果还行）
     - HMM-marko（质量较差）
-    - syntax（依存句法、句法、语法书）
+    - syntax（依存句法、句法、语法书）（简单句还可）
+    - seq2seq（深度学习同义句生成，效果不理想，seq2seq代码大都是 [https://github.com/qhduan/just_another_seq2seq] 的，效果不理想）
     
 # ChatBot
     - 检索式ChatBot
