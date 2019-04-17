@@ -40,3 +40,18 @@ word2_vec_path = w2v_model_wiki_word_path if os.path.exists(w2v_model_wiki_word_
 
 # stanford_corenlp_full_path，需要自己下载配置stanford-corenlp-full-2018-10-05
 stanford_corenlp_full_path = "Y:/segment/stanford-corenlp-full-2018-10-05"
+
+# corpus webbank sim data char
+train_data_web_char_dir = projectdir + '/AugmentText/augment_seq2seq/data_mid/char/'
+train_data_web_ws_anti=projectdir + '/AugmentText/augment_seq2seq/data_mid/char/train_data_web_ws_anti.pkl'
+train_data_web_xy_anti=projectdir + '/AugmentText/augment_seq2seq/data_mid/char/train_data_web_xy_anti.pkl'
+model_ckpt_web_anti=projectdir + '/AugmentText/augment_seq2seq/model_seq2seq_tp/seq2seq_char_webank/model_ckpt_char_webank.ckp'
+path_params=projectdir + '/conf/params.json'
+path_webank_sim=projectdir + '/Data/corpus/sim_webank.csv'
+
+# corpus webbank sim data word
+train_data_web_word_dir = projectdir + '/AugmentText/augment_seq2seq/data_mid/word/'
+train_data_web_emb_anti=projectdir + '/AugmentText/augment_seq2seq/data_mid/word/train_data_web_emb_anti.pkl'
+train_data_web_xyw_anti=projectdir + '/AugmentText/augment_seq2seq/data_mid/word/train_data_web_ws_anti.pkl'
+model_ckpt_web_anti_word=projectdir + '/AugmentText/augment_seq2seq/model_seq2seq_tp/seq2seq_word_webank/train_data_web_ws_anti.pkl'
+
