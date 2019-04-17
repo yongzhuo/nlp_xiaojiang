@@ -1,0 +1,33 @@
+try load model from D:\workspace\pythonMyCode\django_project\nlp_xiaojiang/AugmentText/augment_seq2seq/model_seq2seq_tp/seq2seq_word_webank/train_data_web_ws_anti.pkl
+Input Chat Sentence:你好呀
+Building prefix dict from the default dictionary ...
+Loading model from cache C:\Users\MOYONG~1\AppData\Local\Temp\jieba.cache
+Loading model cost 0.834 seconds.
+Prefix dict has been built succesfully.
+[[   3 5722 5859]] [3]
+[[5882 5879 5877 5815 5867 5781 5808 5881 5545 5882 5823 5871]]
+['</s>', '呀', '你好']
+['我', '的', '还款', '日', '是', '1', '号', '，', '可是', '我', '今天', '借款']
+Input Chat Sentence:你是谁
+[[   3 4909 5867 5767]] [4]
+[[5882 5879 5877 5815 5867 5781 5808 5881 5545 5882 5823 5871 5866 5854
+  5869    3]]
+['</s>', '谁', '是', '你']
+['我', '的', '还款', '日', '是', '1', '号', '，', '可是', '我', '今天', '借款', '什么', '时候', '还', '</s>']
+Input Chat Sentence:你的名字
+[[   3 4974 5879 5767]] [4]
+[[5882 5879 5877 5815 5867 5781 5808 5881 5545 5882 5823 5871 5866 5854
+  5869    3]]
+['</s>', '名字', '的', '你']
+['我', '的', '还款', '日', '是', '1', '号', '，', '可是', '我', '今天', '借款', '什么', '时候', '还', '</s>']
+Input Chat Sentence:的
+[[   3 5879]] [2]
+[[5863 5817    3]]
+['</s>', '的']
+['电话', '确认', '</s>']
+Input Chat Sentence:你的爱人
+[[   3 3005 5879 5767]] [4]
+[[5882 5879 5870 5344 5827    3]]
+['</s>', '爱人', '的', '你']
+['我', '的', '怎么', '不够', '审批', '</s>']
+Input Chat Sentence:
