@@ -15,6 +15,9 @@ projectdir = str(pathlib.Path(os.path.abspath(__file__)).parent.parent)
 sys.path.append(projectdir)
 print(projectdir)
 
+# stop_words_path
+stop_words_path =  projectdir + '/Data/common_words/stopwords.txt'
+
 # corpus
 chicken_and_gossip_path = projectdir + '/Data/corpus/chicken_and_gossip.txt'
 
