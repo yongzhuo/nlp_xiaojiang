@@ -99,12 +99,20 @@ def train_word_anti(bidirectional, cell_type, depth,
                     x, xl, y, yl = next(flow)
                     x = np.flip(x, axis=1)
 
-                    add_loss = model.train(sess,
-                                           dummy_encoder_inputs,
-                                           dummy_encoder_inputs_lengths,
-                                           y, yl, loss_only=True)
+#                   add_loss = model.train(sess,
+#                                            dummy_encoder_inputs,
+#                                            dummy_encoder_inputs_lengths,
+#                                            y, yl, loss_only=True)
 
-                    add_loss *= -0.5
+#                   add_loss *= -0.5
+                    
+                    
+                    loss_aq = model.train(sess,
+                                          y, yl,
+                                          x, xl,
+                                          loss_only=True)
+
+                    add_loss = 0.1 * loss_aq
                     # print(x, y)
                     cost, lr = model.train(sess, x, xl, y, yl,
                                            return_lr=True, add_loss=add_loss)
