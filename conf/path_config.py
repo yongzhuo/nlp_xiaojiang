@@ -58,3 +58,16 @@ train_data_web_emb_anti=projectdir + '/AugmentText/augment_seq2seq/data_mid/word
 train_data_web_xyw_anti=projectdir + '/AugmentText/augment_seq2seq/data_mid/word/train_data_web_ws_anti.pkl'
 model_ckpt_web_anti_word=projectdir + '/AugmentText/augment_seq2seq/model_seq2seq_tp/seq2seq_word_webank/train_data_web_ws_anti.pkl'
 
+# chatbot data char
+chatbot_data_cg_char_dir = projectdir + '/ChatBot/chatbot_generate/seq2seq/data_mid/char/'
+chatbot_data_cg_ws_anti=projectdir + '/ChatBot/chatbot_generate/seq2seq/data_mid/char/train_data_web_ws_anti.pkl'
+chatbot_data_cg_xy_anti=projectdir + '/ChatBot/chatbot_generate/seq2seq/data_mid/char/train_data_web_xy_anti.pkl'
+model_ckpt_cg_anti=projectdir + '/ChatBot/chatbot_generate/seq2seq/model_seq2seq_tp/seq2seq_char_cg/model_ckpt_char_cg.ckp'
+
+# chatbot data word
+chatbot_data_cg_word_dir = projectdir + '/ChatBot/chatbot_generate/seq2seq/data_mid/word/'
+chatbot_data_cg_xyw_anti_word=projectdir + '/ChatBot/chatbot_generate/seq2seq/data_mid/word/train_data_cg_word_xyw.pkl'
+chatbot_data_cg_emb_anti_word=projectdir + '/ChatBot/chatbot_generate/seq2seq/data_mid/word/train_data_cg_word_emb.pkl'
+model_ckpt_cg_anti_word=projectdir + '/ChatBot/chatbot_generate/seq2seq/model_seq2seq_tp/seq2seq_word_cg/model_ckpt_word_cg.ckp'
+
+
