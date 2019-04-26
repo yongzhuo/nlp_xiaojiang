@@ -28,23 +28,6 @@ def load_word2vec_model(path, bin=False, limit=None):
     return word2vec_model
 
 
-def is_oov(model_vec, query_seg, p_max=0.16):
-    """
-    判断查询分词的oov情况是放弃，如果oov词个数超过xx%则放弃该回答答案
-    :param topic_model:
-    :return:
-    """
-    words = [word for word in query_seg if str(word).strip() is not ""]
-    count_total = 1
-    count_oov = 0
-    if words:
-        count_total = len(words)
-    for word in words:
-        if word not in model_vec:
-            count_oov = count_oov + 1
-    return float(count_oov/count_total) > p_max
-
-
 def get_td_idf_flag(jieba_cut_list, dictionary, tfidf_model):
     # todo
     '''获取td-idf权重，有问题，同一个词只计算一次，有的还没有，比如说停用词'''
