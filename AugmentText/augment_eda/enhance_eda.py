@@ -4,7 +4,8 @@
 # @author   :most of zhanlaoban; some of mo(gen some filter).     main code is there: https://github.com/zhanlaoban/eda_nlp_for_Chinese
 # @function :enhance text by eda, eda is replace, insert, swap, delete
 
-
+from utils.text_tools import load_word2vec_model
+from conf.path_config import word2_vec_path
 from utils.text_tools import is_total_english
 from utils.text_tools import is_total_number
 from conf.path_config import stop_words_path
@@ -24,6 +25,9 @@ stop_words = []
 for stop_word in f_stop.readlines():
     stop_words.append(stop_word.strip())
 
+print("load word2vec start")
+word2vec_model = load_word2vec_model(word2_vec_path, limit_words=10000, binary_type=False, encoding_type='utf-8')
+print("load word2vec ok")
 
 def synonym_replacement(words, n, key_words):
     """
@@ -54,6 +58,19 @@ def get_syn_by_synonyms(word):
         return synonyms.nearby(word)[0]
     else:
         return word
+
+
+def get_synonyms_from_word2vec(word2vec_model, word, topn=20, score_top=0.75):
+    word_syn = []
+    try:
+        topn_words = word2vec_model.most_similar(word, topn=topn)
+        for topn_word_num in topn_words:
+            if topn_word_num[1] >= score_top:
+                word_syn.append(topn_word_num[0])
+                #return topn_word_num[0]
+    except Exception as e:
+        print(str(e))
+    return [word_syn]
 
 
 def random_insertion(words, n, key_words):
@@ -223,6 +240,8 @@ def eda(sentence, alpha_sr=0.1, alpha_ri=0.1, alpha_rs=0.1, p_rd=0.1, num_aug=9,
 
 
 if __name__ == "__main__":
+    des_word2vec = get_synonyms_from_word2vec(word2vec_model, '汾', topn=20, score_top=0.75)
+    print(des_word2vec)
     des = get_syn_by_synonyms("同义词")
     print(des)
     syn = eda(sentence="rsh喜欢大漠帝国吗", alpha_sr=0.2, alpha_ri=0.2, alpha_rs=0.2, p_rd=0.2, num_aug=10, key_words=key_word_list)
