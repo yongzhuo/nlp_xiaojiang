@@ -310,6 +310,16 @@ def judge_translate_english(sen_org, sen_tra):
     return True
 
 
+def load_word2vec_model(model_path, binary_type=True, encoding_type = 'utf-8', limit_words=None):
+    '''
+      下载词向量
+    :param model_path: str
+    :return:  word2vec model
+    '''
+    word2vec_model = gensim.models.KeyedVectors.load_word2vec_format(model_path, binary=binary_type, limit=limit_words, encoding=encoding_type, unicode_errors='ignore')
+    return word2vec_model
+
+
 #todo #句子改写，同义词替换，去停用词等
 
 
