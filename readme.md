@@ -60,8 +60,9 @@
     - chinese_vector
         - 截取的部分word2vec训练词向量（自己需要下载全效果才会好）
     - corpus
-        - 小黄鸡和gossip问答预料（数据没清洗）
-        - 微众银行文本相似度匹配比赛的数据，感觉阿里的文本相似度匹配比赛数据更差点
+        github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
+        - 小黄鸡和gossip问答预料（数据没清洗）,chicken_and_gossip.txt
+        - 微众银行和支付宝文本相似度竞赛数据， sim_webank.csv
     - sentence_vec_encode_char
         - 1.txt（字向量生成的前100000句向量）
     - sentence_vec_encode_word
