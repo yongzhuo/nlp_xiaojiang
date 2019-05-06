@@ -58,7 +58,9 @@
                                           然后跑 python predict_char_anti.py
 # Data
     - chinese_vector
+        github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
         - 截取的部分word2vec训练词向量（自己需要下载全效果才会好）
+        - w2v_model_wiki_char.vec、w2v_model_wiki_word.vec都只有部分
     - corpus
         github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
         - 小黄鸡和gossip问答预料（数据没清洗）,chicken_and_gossip.txt
