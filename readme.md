@@ -58,13 +58,9 @@
   - 11.数据增强（augment_seq2seq）:        先跑 python extract_char_webank.py生成数据，
                                           再跑 python train_char_anti.py
                                           然后跑 python predict_char_anti.py
-  - 12.特征计算(bert)：提取特征:  
+  - 12.特征计算(bert)（提取特征、计算相似度）: 
                       ```
                       run extract_keras_bert_feature.py
-                      ```
-                                       
-                      计算相似度: 
-                      ```
                       run tet_bert_keras_sim.py
                       ```
                       
