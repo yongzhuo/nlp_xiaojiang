@@ -3,14 +3,14 @@
 # usage:
 this bert you need not fine tuning for common target
 
-  step1:githubÏîÄ¿ÖĞÖ»ÊÇÉÏ´«²¿·ÖÊı¾İ£¬ĞèÒªµÄÇ°ÍùÁ´½Ó: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q ÌáÈ¡Âë: rket
-        download  chinese_L-12_H-768_A-12£¨¹È¸èÔ¤ÑµÁ·ºÃµÄÄ£ĞÍ£©
-        ½âÑ¹µ½Data/chinese_L-12_H-768_A-12
-  step2-1:
-       ÔËĞĞ FeatureProject/bert/extract_keras_bert_feature.py
+  * step1:githubé¡¹ç›®ä¸­åªæ˜¯ä¸Šä¼ éƒ¨åˆ†æ•°æ®ï¼Œéœ€è¦çš„å‰å¾€é“¾æ¥: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q æå–ç : rket
+        download  chinese_L-12_H-768_A-12ï¼ˆè°·æ­Œé¢„è®­ç»ƒå¥½çš„æ¨¡å‹ï¼‰
+        è§£å‹åˆ°Data/chinese_L-12_H-768_A-12
+  * step2-1:
+       è¿è¡Œ FeatureProject/bert/extract_keras_bert_feature.py
        then you can get vector of bert encoding
-  step2-2:
-       ÔËĞĞ FeatureProject/bert/tet_bert_keras_sim.py
+  * step2-2:
+       è¿è¡Œ FeatureProject/bert/tet_bert_keras_sim.py
        then you can get sim of bert vector of two sentence
                 and get avg time of run a sentence of encode
 
