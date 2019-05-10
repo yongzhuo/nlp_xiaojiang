@@ -324,33 +324,4 @@ def load_word2vec_model(model_path, binary_type=True, encoding_type = 'utf-8', l
 
 
 if __name__ == '__main__':
-
-
-    # for i in range(10):
-    #     sentence_vec = word2vec_model.wv["的"]
-    #     sentence_vec_pd = pd.DataFrame(sentence_vec)
-    #     sentence_vec_pd.to_csv('my_csv.csv', mode='a', header=False)
-
-    # sentence_ee = pd.read_csv('my_csv.csv')
-
-    # txtWrite([str(sentence_vec)], "gg.txt")
-
-
-    # path_test_data_government = '/data/test_data_government.csv'
-    # sentences = txtRead(path_test_data_government)
-    sentences = []
-    sentences_one_clear_punctuation_all = []
-    for sentences_one in sentences[1:]:
-        sentences_one_1 = sentences_one
-        sentences_one_clear_punctuation = clear_punctuation(sentences_one_1.replace(',0.0,1.0', ''))
-        # print(sentences_one)
-        # print(sentences_one_clear_punctuation)
-        sentences_one_clear_punctuation_jieba = jieba.cut(sentences_one_clear_punctuation, cut_all=False, HMM=False)
-        sentences_one_clear_punctuation_jieba_list = ' '.join(list(sentences_one_clear_punctuation_jieba)).replace('   ', ' ').replace('  ', ' ').strip()
-        sentences_one_clear_punctuation_all.append(sentences_one_clear_punctuation_jieba_list + ',0.0,1.0' + '\n')
-
-    txtWrite(sentences[0:1] + sentences_one_clear_punctuation_all, '/data/test_data_government_cut.csv')
-
-    #',0.0,1.0'
-    # np.savetxt('001', [word2vec_model.wv["的"], word2vec_model.wv["的"]])
-    # gg = np.loadtxt('001')
+    gg = 0
