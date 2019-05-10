@@ -17,13 +17,14 @@
         - GAN
 
 # FeatureProject
+    - bert句向量、文本相似度
+        - bert/extract_keras_bert_feature.py:提取bert句向量特征
+        - bert/tet_bert_keras_sim.py:测试bert句向量cosin相似度
     - normalization_util指的是数据归一化
         - 0-1归一化处理
         - 均值归一化
         - sig归一化处理
-    - sim feature（ML、bert）
-        - bert/extract_keras_bert_feature.py:提取bert句向量特征
-        - bert/tet_bert_keras_sim.py:测试bert句向量cosin相似度
+    - sim feature（ML）
         - distance_text_or_vec:各种计算文本、向量距离等
         - distance_vec_TS_SS：TS_SS计算词向量距离
         - cut_td_idf：将小黄鸡语料和gossip结合
