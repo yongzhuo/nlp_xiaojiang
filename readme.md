@@ -58,8 +58,16 @@
   - 11.数据增强（augment_seq2seq）:        先跑 python extract_char_webank.py生成数据，
                                           再跑 python train_char_anti.py
                                           然后跑 python predict_char_anti.py
-  - 12.特征计算(bert)：提取特征:   run extract_keras_bert_feature.py
-                      计算相似度: run tet_bert_keras_sim.py
+  - 12.特征计算(bert)：提取特征:  
+                      ```
+                      run extract_keras_bert_feature.py
+                      ```
+                                       
+                      计算相似度: 
+                      ```
+                      run tet_bert_keras_sim.py
+                      ```
+                      
 # Data
     - chinese_L-12_H-768_A-12（谷歌预训练好的模型）
        github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
