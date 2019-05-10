@@ -21,7 +21,9 @@
         - 0-1归一化处理
         - 均值归一化
         - sig归一化处理
-    - sim feature（这里只有ML，没有bert、emlo等的句向量相似度）
+    - sim feature（ML、bert）
+        - bert/extract_keras_bert_feature.py:提取bert句向量特征
+        - bert/tet_bert_keras_sim.py:测试bert句向量cosin相似度
         - distance_text_or_vec:各种计算文本、向量距离等
         - distance_vec_TS_SS：TS_SS计算词向量距离
         - cut_td_idf：将小黄鸡语料和gossip结合
@@ -56,7 +58,12 @@
   - 11.数据增强（augment_seq2seq）:        先跑 python extract_char_webank.py生成数据，
                                           再跑 python train_char_anti.py
                                           然后跑 python predict_char_anti.py
+  - 12.特征计算(bert)：提取特征:   run extract_keras_bert_feature.py
+                      计算相似度: run tet_bert_keras_sim.py
 # Data
+    - chinese_L-12_H-768_A-12（谷歌预训练好的模型）
+       github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
+       解压后就可以啦
     - chinese_vector
         github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
         - 截取的部分word2vec训练词向量（自己需要下载全效果才会好）
