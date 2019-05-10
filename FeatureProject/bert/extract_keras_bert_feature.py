@@ -36,9 +36,9 @@ class KerasBertVector():
         model = load_trained_model_from_checkpoint(self.config_path, self.checkpoint_path,
                                                         seq_len=self.max_seq_len)
         model.summary(120)
-        # 如果只有一层，就只取对应那一层的weight
+        # 如果只选一层，就只取对应那一层的weight
         if len(layer_indexes) == 1:
-            encoder_layer = model.get_layer(index=11).output
+            encoder_layer = model.get_layer(index=len(model.layers)-2).output
         # 否则遍历需要取的层，把所有层的weight取出来并拼接起来shape:768*层数
         else:
             # layer_indexes must be [1,2,3,......12]
