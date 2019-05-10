@@ -4,9 +4,12 @@
 # @author   :Mo
 # @function :
 
-from conf.feature_config import gpu_memory_fraction, config_name, ckpt_name, vocab_file, max_seq_len
+from conf.feature_config import gpu_memory_fraction, config_name, ckpt_name, vocab_file, max_seq_len, layer_indexes
 from keras_bert import load_trained_model_from_checkpoint, Tokenizer
+from FeatureProject.bert.layers_keras import NonMaskingLayer
 import keras.backend.tensorflow_backend as ktf_keras
+import keras.backend as k_keras
+from keras.models import Model
 import tensorflow as tf
 import numpy as np
 import codecs
@@ -32,6 +35,19 @@ class KerasBertVector():
         global model
         model = load_trained_model_from_checkpoint(self.config_path, self.checkpoint_path,
                                                         seq_len=self.max_seq_len)
+        model.summary(120)
+        # 如果只有一层，就只取对应那一层的weight
+        if len(layer_indexes) == 1:
+            encoder_layer = model.get_layer(index=11).output
+        # 否则遍历需要取的层，把所有层的weight取出来并拼接起来shape:768*层数
+        else:
+            # layer_indexes must be [1,2,3,......12]
+            all_layers = [model.get_layer(index=lay).output for lay in layer_indexes]
+            encoder_layer = k_keras.concatenate(all_layers, -1)
+        output_layer = NonMaskingLayer()(encoder_layer)
+        model = Model(model.inputs, output_layer)
+
+        # reader tokenizer
         self.token_dict = {}
         with codecs.open(self.dict_path, 'r', 'utf8') as reader:
             for line in reader:
@@ -41,7 +57,7 @@ class KerasBertVector():
         self.tokenizer = Tokenizer(self.token_dict)
 
     def bert_encode(self, texts):
-
+        # 文本预处理
         input_ids = []
         input_masks = []
         input_type_ids = []
