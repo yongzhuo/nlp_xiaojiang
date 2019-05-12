@@ -70,4 +70,7 @@ chatbot_data_cg_xyw_anti_word=projectdir + '/ChatBot/chatbot_generate/seq2seq/da
 chatbot_data_cg_emb_anti_word=projectdir + '/ChatBot/chatbot_generate/seq2seq/data_mid/word/train_data_cg_word_emb.pkl'
 model_ckpt_cg_anti_word=projectdir + '/ChatBot/chatbot_generate/seq2seq/model_seq2seq_tp/seq2seq_word_cg/model_ckpt_word_cg.ckp'
 
-
+# webank corpus for classify train-dev-test
+path_webank_train=projectdir + '/Data/corpus/webank/train.csv'
+path_webank_dev=projectdir + '/Data/corpus/webank/dev.csv'
+path_webank_test=projectdir + '/Data/corpus/webank/test.csv'
