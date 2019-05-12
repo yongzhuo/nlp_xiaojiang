@@ -16,6 +16,10 @@
         - seq2seq
         - GAN
 
+# ClassificationText
+    - bert+bi-lstm(keras) approach 0.78~0.79% acc of Weizhong Bank Intelligent Customer Service Question Matching Competition
+
+
 # FeatureProject
     - bert句向量、文本相似度
         - bert/extract_keras_bert_feature.py:提取bert句向量特征
@@ -75,6 +79,7 @@
         - w2v_model_wiki_char.vec、w2v_model_wiki_word.vec都只有部分
     - corpus
         github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
+        - webank(train、dev、test)
         - 小黄鸡和gossip问答预料（数据没清洗）,chicken_and_gossip.txt
         - 微众银行和支付宝文本相似度竞赛数据， sim_webank.csv
     - sentence_vec_encode_char
