@@ -14,8 +14,13 @@ from sklearn.metrics import classification_report
 from keras.layers import CuDNNGRU, CuDNNLSTM
 from keras.layers import TimeDistributed
 from keras.layers import Bidirectional
+from keras.layers import RepeatVector
+from keras.layers import Bidirectional
 from keras.layers import concatenate
 from keras.layers import GRU, LSTM
+from keras.layers import Multiply
+from keras.layers import Permute
+from keras.layers import Flatten
 from keras.layers import Dropout
 from keras.layers import Lambda
 from keras.layers import Dense
@@ -25,13 +30,29 @@ import numpy as np
 import codecs
 import keras
 
+import keras.backend as k_keras
+import logging as logger
+
 from ClassificationText.bert.keras_bert_embedding import KerasBertEmbedding
 from ClassificationText.bert import args
 
 from conf.feature_config import config_name, ckpt_name, vocab_file, max_seq_len, layer_indexes, gpu_memory_fraction
 from keras_bert import Tokenizer
 
-import logging as logger
+
+def attention(inputs, single_attention_vector=False):
+    # attention机制
+    time_steps = k_keras.int_shape(inputs)[1]
+    input_dim = k_keras.int_shape(inputs)[2]
+    x = Permute((2, 1))(inputs)
+    x = Dense(time_steps, activation='softmax')(x)
+    if single_attention_vector:
+        x = Lambda(lambda x: k_keras.mean(x, axis=1))(x)
+        x = RepeatVector(input_dim)(x)
+
+    a_probs = Permute((2, 1))(x)
+    output_attention_mul = Multiply()([inputs, a_probs])
+    return output_attention_mul
 
 
 class BertBiLstmModel():
@@ -47,7 +68,10 @@ class BertBiLstmModel():
                 self.token_dict[token] = len(self.token_dict)
 
         self.tokenizer = Tokenizer(self.token_dict)
-        self.build_model()
+        # 你可以选择一个model build，有bi-lstm single、bi-lstm 3-layers、bi-lstm_attention
+        # self.build_model_bilstm_layers()
+        # self.build_model_bilstm_single()
+        self.build_model_bilstm_attention()
         # logger.info("BertBiLstmModel init end!")
         print("BertBiLstmModel init end!")
 
@@ -94,7 +118,7 @@ class BertBiLstmModel():
         logger.info("process ok!")
         return input_ids, input_masks, input_type_ids
 
-    def build_model(self):
+    def build_model_bilstm_layers(self):
         if args.use_lstm:
             if args.use_cudnn_cell:
                 layer_cell = CuDNNLSTM
@@ -114,19 +138,19 @@ class BertBiLstmModel():
         # print(bert_output.shape)
         # Bi-LSTM
         x = Bidirectional(layer_cell(units=args.units, return_sequences=args.return_sequences,
-                                               kernel_regularizer=regularizers.l2(args.l2*0.1),
-                                               recurrent_regularizer=regularizers.l2(args.l2)
-                                               ))(bert_output)
+                                     kernel_regularizer=regularizers.l2(args.l2 * 0.1),
+                                     recurrent_regularizer=regularizers.l2(args.l2)
+                                     ))(bert_output)
         # blstm_layer = TimeDistributed(Dropout(args.keep_prob))(blstm_layer) 这个用不了，好像是输入不对, dims<3吧
         x = Dropout(args.keep_prob)(x)
 
         x = Bidirectional(layer_cell(units=args.units, return_sequences=args.return_sequences,
-                                               kernel_regularizer=regularizers.l2(args.l2*0.1),
-                                               recurrent_regularizer=regularizers.l2(args.l2)))(x)
+                                     kernel_regularizer=regularizers.l2(args.l2 * 0.1),
+                                     recurrent_regularizer=regularizers.l2(args.l2)))(x)
         x = Dropout(args.keep_prob)(x)
         x = Bidirectional(layer_cell(units=args.units, return_sequences=args.return_sequences,
-                                               kernel_regularizer=regularizers.l2(args.l2*0.1),
-                                               recurrent_regularizer=regularizers.l2(args.l2)))(x)
+                                     kernel_regularizer=regularizers.l2(args.l2 * 0.1),
+                                     recurrent_regularizer=regularizers.l2(args.l2)))(x)
         x = Dropout(args.keep_prob)(x)
 
         # 平均池化、最大池化拼接
@@ -135,8 +159,45 @@ class BertBiLstmModel():
         print(max_pool.shape)
         print(avg_pool.shape)
         concat = concatenate([avg_pool, max_pool])
-        x = Dense(int(args.units/4), activation="relu")(concat)
+        x = Dense(int(args.units / 4), activation="relu")(concat)
         x = Dropout(args.keep_prob)(x)
+
+        # 最后就是softmax
+        dense_layer = Dense(args.label, activation=args.activation)(x)
+        output_layers = [dense_layer]
+        self.model = Model(bert_inputs, output_layers)
+
+    def build_model_bilstm_attention(self):
+        if args.use_lstm:
+            if args.use_cudnn_cell:
+                layer_cell = CuDNNLSTM
+            else:
+                layer_cell = LSTM
+        else:
+            if args.use_cudnn_cell:
+                layer_cell = CuDNNGRU
+            else:
+                layer_cell = GRU
+        # bert embedding
+        bert_inputs, bert_output = KerasBertEmbedding().bert_encode()
+        # Bi-LSTM
+        x = Bidirectional(layer_cell(units=args.units, return_sequences=args.return_sequences,
+                                     kernel_regularizer=regularizers.l2(args.l2 * 0.1),
+                                     recurrent_regularizer=regularizers.l2(args.l2)
+                                     ))(bert_output)
+        x = TimeDistributed(Dropout(args.keep_prob))(x)  # 这个用不了，好像是输入不对, dims<3吧
+        x = attention(x)
+        x = Flatten()(x)
+        x = Dropout(args.keep_prob)(x)
+
+        # # 平均池化、最大池化拼接
+        # avg_pool = GlobalAvgPool1D()(x)
+        # max_pool = GlobalMaxPool1D()(x)
+        # print(max_pool.shape)
+        # print(avg_pool.shape)
+        # concat = concatenate([avg_pool, max_pool])
+        # x = Dense(int(args.units/4), activation="relu")(concat)
+        # x = Dropout(args.keep_prob)(x)
 
         # 最后就是softmax
         dense_layer = Dense(args.label, activation=args.activation)(x)
@@ -158,9 +219,9 @@ class BertBiLstmModel():
         bert_inputs, bert_output = KerasBertEmbedding().bert_encode()
         # Bi-LSTM
         x = Bidirectional(layer_cell(units=args.units, return_sequences=args.return_sequences,
-                                               kernel_regularizer=regularizers.l2(args.l2*0.1),
-                                               recurrent_regularizer=regularizers.l2(args.l2)
-                                               ))(bert_output)
+                                     kernel_regularizer=regularizers.l2(args.l2 * 0.1),
+                                     recurrent_regularizer=regularizers.l2(args.l2)
+                                     ))(bert_output)
         x = Dropout(args.keep_prob)(x)
 
         # 最后就是softmax
@@ -258,7 +319,7 @@ def classify_pair_corpus(bert_model):
         label = q_2_l[-1]
         questions.append([text_preprocess(q_1), text_preprocess(q_2)])
         label_int = int(label)
-        labels.append([0, 1] if label_int==1 else [1, 0] )
+        labels.append([0, 1] if label_int == 1 else [1, 0])
 
     questions = np.array(questions)
     labels = np.array(labels)
@@ -292,7 +353,7 @@ def classify_pair_corpus_webank(bert_model, path_webank):
         label = q_2_l[-1]
         questions.append([text_preprocess(q_1), text_preprocess(q_2)])
         label_int = int(label)
-        labels.append([0, 1] if label_int==1 else [1, 0] )
+        labels.append([0, 1] if label_int == 1 else [1, 0])
 
     questions = np.array(questions)
     labels = np.array(labels)
@@ -302,7 +363,7 @@ def classify_pair_corpus_webank(bert_model, path_webank):
     return questions, labels, input_ids, input_masks, input_type_ids
 
 
-if __name__=="__main__":
+def train():
     # 1. trian
     bert_model = BertBiLstmModel()
     bert_model.compile_model()
@@ -314,36 +375,45 @@ if __name__=="__main__":
     print("bert_model fit ok!")
 
 
-    # #  2.test
-    # bert_model = BertBiLstmModel()
-    # bert_model.load_model()
-    # questions_test, labels_test, input_ids_test, input_masks_test, _ = classify_pair_corpus_webank(bert_model, path_webank_test)
-    # print('predict_list start! you will wait for a few minutes')
-    # labels_pred = bert_model.predict_list(questions_test)
-    # print('predict_list end!')
-    #
-    # labels_pred_np = np.array(labels_pred)
-    # labels_pred_np_arg = np.argmax(labels_pred_np, axis=1)
-    # labels_test_np = np.array(labels_test)
-    # labels_test_np_arg = np.argmax(labels_test_np, axis=1)
-    # target_names = ['不相似', '相似']
-    # report_predict = classification_report(labels_test_np_arg, labels_pred_np_arg, target_names=target_names)
-    # print(report_predict)
+def tet():
+    #  2.test
+    bert_model = BertBiLstmModel()
+    bert_model.load_model()
+    questions_test, labels_test, input_ids_test, input_masks_test, _ = classify_pair_corpus_webank(bert_model,
+                                                                                                   path_webank_test)
+    print('predict_list start! you will wait for a few minutes')
+    labels_pred = bert_model.predict_list(questions_test)
+    print('predict_list end!')
+
+    labels_pred_np = np.array(labels_pred)
+    labels_pred_np_arg = np.argmax(labels_pred_np, axis=1)
+    labels_test_np = np.array(labels_test)
+    labels_test_np_arg = np.argmax(labels_test_np, axis=1)
+    target_names = ['不相似', '相似']
+    report_predict = classification_report(labels_test_np_arg, labels_pred_np_arg,
+                                           target_names=target_names, digits=9)
+    print(report_predict)
 
 
-    # # 3. predict
-    # bert_model = BertBiLstmModel()
-    # bert_model.load_model()
-    # pred = bert_model.predict(sen_1='jy', sen_2='myz')
-    # print(pred[0][1])
-    # while True:
-    #     print("sen_1: ")
-    #     sen_1 = input()
-    #     print("sen_2: ")
-    #     sen_2 = input()
-    #     pred = bert_model.predict(sen_1=sen_1, sen_2=sen_2)
-    #     print(pred[0][1])
+def predict():
+    # 3. predict
+    bert_model = BertBiLstmModel()
+    bert_model.load_model()
+    pred = bert_model.predict(sen_1='jy', sen_2='myz')
+    print(pred[0][1])
+    while True:
+        print("sen_1: ")
+        sen_1 = input()
+        print("sen_2: ")
+        sen_2 = input()
+        pred = bert_model.predict(sen_1=sen_1, sen_2=sen_2)
+        print(pred[0][1])
 
+
+if __name__ == "__main__":
+    train()
+    # tet()
+    # predict()
 
     # # classify single webank and ali
     # train_x, train_y, test_x, test_y, input_ids, input_masks, input_type_ids, input_ids2, input_masks2, input_type_ids2 = classify_single_corpus(bert_model)
@@ -351,7 +421,11 @@ if __name__=="__main__":
     # train_x, train_y, test_x, test_y, input_ids, input_masks, input_type_ids, input_ids2, input_masks2, input_type_ids2 = classify_pair_corpus(bert_model)
 
 
-# result of train 100/31 all spare
+
+
+
+
+# result of train 100/31 all spare, single bi-lstm
 # 18017/18017 [==============================] - 110s 6ms/step - loss: 0.2321 - acc: 0.9079 - val_loss: 0.5854 - val_acc: 0.7827
 # result of train 100/100 cls
 # 18017/18017 [==============================] - 82s 5ms/step - loss: 0.5843 - acc: 0.6938 - val_loss: 0.5537 - val_acc: 0.7093
@@ -365,14 +439,15 @@ if __name__=="__main__":
 # 18017/18017 [==============================] - 89s 5ms/step - loss: 0.4505 - acc: 0.8031 - val_loss: 0.4728 - val_acc: 0.7742
 
 
-# train data of tdt 0.78
-# test {0: {'precision': 0.757, 'recall': 0.804, 'f1': 0.779}, 1: {'precision': 0.791, 'recall': 0.741, 'f1': 0.765}, 'mean': {'mean_precision': 0.774, 'mean_recall': 0.772, 'macro_f1': 0.772}, 'sum': {'sum_precision': 0.773, 'sum_recall': 0.749, 'micro_f1': 0.761}}
-# train data of tdt avgpool
-# test {0: {'precision': 0.773, 'recall': 0.781, 'f1': 0.777}, 1: {'precision': 0.779, 'recall': 0.771, 'f1': 0.775}, 'mean': {'mean_precision': 0.776, 'mean_recall': 0.776, 'macro_f1': 0.776}, 'sum': {'sum_precision': 0.776, 'sum_recall': 0.772, 'micro_f1': 0.774}}
-
-
 # test data of tdt; result of train 100/2 3 lstm MaxPool1D、AvgPool1D
 #                  precision    recall  f1-score   support
 #         不相似       0.78      0.77      0.77      5000
 #          相似       0.77      0.78      0.78      5000
 # avg / total       0.78      0.78      0.78     10000
+
+
+# test data of tdt; result of train 100/11 1 lstm-attention
+#                  precision    recall  f1-score   support
+#         不相似  0.788990826 0.774000000 0.781423523      5000
+#          相似  0.778213935 0.793000000 0.785537395      5000
+# avg / total  0.783602380 0.783500000 0.783480459     10000
