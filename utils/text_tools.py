@@ -131,69 +131,6 @@ def get_syboml(ques):
     answer = re.sub("[\.\!\/_,?;:$%^*<>()+\"\']+|[！，；：。？、“”’‘《》[\]（|）{}【】~@#￥%…&*\/\-—_]+", " ", ques).strip()
     return answer
 
-'''xlrd读xls'''
-
-def xlsRead(sheetName=None, cols=0, fileXlsPath=None):
-    '''读xls文件'''
-    workbook = xlrd.open_workbook(fileXlsPath)
-    # 根据sheet索引或者名称获取sheet内容
-    sheet = workbook.sheet_by_name(sheetName)
-    nrows = sheet.nrows
-    ncols = sheet.ncols
-
-    listRows = []
-    for i in range(nrows):
-        listRows.append(sheet.row_values(i))
-
-    return listRows
-
-'''openpyxl写xlsx'''
-
-def xlsxWrite(sheetName, writeList, fileXlsName):
-    wb = Workbook()
-    print('{}'.format(wb.get_sheet_names()))  # 提供一个默认名叫Sheet的表，office2016下新建提供默认Sheet1
-    sheet = wb.create_sheet(sheetName)
-    # i = 0
-    for listLine_one in writeList:
-        # i += 1
-        sheet.append(listLine_one)
-        # if i == 1000:
-        #     break
-    wb.save(fileXlsName)
-
-'''读取txt文件'''
-
-def txtRead(filePath, encodeType='utf-8'):
-    listLine = []
-    try:
-        file = open(filePath, 'r', encoding=encodeType)
-
-        while True:
-            line = file.readline()
-            if not line:
-                break
-
-            listLine.append(line)
-
-        file.close()
-
-    except Exception as e:
-        logger.info(str(e))
-
-    finally:
-        return listLine
-
-'''读取txt文件'''
-
-def txtWrite(listLine, filePath, type='w', encodeType='utf-8'):
-
-    try:
-        file = open(filePath, type, encoding=encodeType)
-        file.writelines(listLine)
-        file.close()
-
-    except Exception as e:
-        logger.info(str(e))
 
 # -*- coding: cp936 -*-
 def strQ2B(ustring):
@@ -318,6 +255,15 @@ def load_word2vec_model(model_path, binary_type=True, encoding_type = 'utf-8', l
     '''
     word2vec_model = gensim.models.KeyedVectors.load_word2vec_format(model_path, binary=binary_type, limit=limit_words, encoding=encoding_type, unicode_errors='ignore')
     return word2vec_model
+
+
+def text_preprocess(text):
+    if text.strip():
+        text_simple_q2b = strQ2B(text)
+        text_simple_q2b_only = getChinese1(text_simple_q2b)
+        return text_simple_q2b_only.lower()
+    else:
+        return text
 
 
 #todo #句子改写，同义词替换，去停用词等
