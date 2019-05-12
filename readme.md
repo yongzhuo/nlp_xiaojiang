@@ -105,6 +105,7 @@
 * 小牛翻译：[http://www.niutrans.com/index.html](http://www.niutrans.com/index.html)
     
 # 其他资料
+* bert(keras):[https://github.com/CyberZHG/keras-bert](https://github.com/CyberZHG/keras-bert)
 * NLP数据增强汇总:[https://github.com/quincyliang/nlp-data-augmentation](https://github.com/quincyliang/nlp-data-augmentation)
 * 知乎NLP数据增强话题:[https://www.zhihu.com/question/305256736/answer/550873100](https://www.zhihu.com/question/305256736/answer/550873100)
 * chatbot_seq2seq_seqGan（比较好用）：[https://github.com/qhduan/just_another_seq2seq](https://github.com/qhduan/just_another_seq2seq)
