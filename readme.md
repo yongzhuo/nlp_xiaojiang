@@ -17,7 +17,10 @@
         - GAN
 
 # ClassificationText
-    - bert+bi-lstm(keras) approach 0.78~0.79% acc of Weizhong Bank Intelligent Customer Service Question Matching Competition
+    - bert+bi-lstm(keras) approach 0.78~0.79% acc of weBank Intelligent Customer Service Question Matching Competition
+    - bert + text-cnn(keras) approach 0.78~0.79% acc of weBank Intelligent Customer Service Question Matching Competition
+    - bert + r-cnn(keras) approach 0.78~0.79% acc of weBank Intelligent Customer Service Question Matching Competition
+    - bert + avt-cnn(keras) approach 0.78~0.79% acc of weBank Intelligent Customer Service Question Matching Competition
 
 
 # FeatureProject
