@@ -1,4 +1,4 @@
-
+# bi-lstm
 return_sequences = True
 use_cudnn_cell = True
 use_lstm = True
@@ -8,6 +8,7 @@ metrics =  ['accuracy']
 activation =  'softmax'
 optimizers = 'adam'
 learning_rate = 1e-3
+embedding_dim = 768
 keep_prob = 0.5
 units = 256
 decay = 0.0
@@ -15,9 +16,12 @@ label = 2
 l2 = 0.32
 
 epochs = 100
-batch_size = 32
-path_save_model = 'model_webank_tdt/bert_bi_lstm_pair.h5' # 'bert_bi_lstm_pair.h5'
+batch_size = 128
+path_save_model = 'model_webank_tdt/bert_avt_cnn.h5' # 'bert_bi_lstm_pair.h5'
 
+# text-cnn
+filters = [3, 4, 5]
+num_filters = 512
 
 
 
