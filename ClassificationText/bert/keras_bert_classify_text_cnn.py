@@ -291,13 +291,13 @@ if __name__ == "__main__":
     # tet()
     # predict()
 
-# text cnn, not stop
-# 100000/100000 [==============================] - 1842s 18ms/step - loss: 0.5173 - acc: 0.7488 - val_loss: 0.4704 - val_acc: 0.7827
-# Epoch 00010: val_loss improved from 0.47364 to 0.47036, saving model to model_webank_tdt/bert_bi_lstm_pair.h5
-#                  precision    recall     f1-score   support
-#         不相似  0.783744856 0.761800000 0.772616633      5000
-#          相似  0.768287938 0.789800000 0.778895464      5000
-# avg / total  0.776016397 0.775800000 0.775756048     10000
+# text cnn, real stop
+# 100000/100000 [==============================] - 1546s 15ms/step - loss: 0.4168 - acc: 0.8108 - val_loss: 0.4379 - val_acc: 0.8008
+# Epoch 00024: val_loss improved from 0.43926 to 0.43788, saving model to model_webank_tdt/bert_avt_cnn.h5
+#                  precision    recall  f1-score   support
+#         不相似  0.800245600 0.782000000 0.791017601      5000
+#          相似  0.786859601 0.804800000 0.795728693      5000
+# avg / total  0.793552600 0.793400000 0.793373147     10000
 
 
 # text-rcnn, real stop
