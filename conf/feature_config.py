@@ -14,7 +14,7 @@ sys.path.append(projectdir)
 
 
 # path of BERT model
-model_dir = projectdir + '/Data/chinese_L-12_H-768_A-12/'
+model_dir = projectdir + '/Data/chinese_L-12_H-768_A-12'
 config_name = model_dir + '/bert_config.json'
 ckpt_name = model_dir + '/bert_model.ckpt'
 vocab_file = model_dir + '/vocab.txt'
