@@ -10,6 +10,8 @@ jieba==0.39
 xlrd==1.2.0
 tensorflow-gpu==1.12.0
 keras-bert==0.41.0
+keras==2.2.4
+python==3.6.2
 sklearn
 pathlib
 translate
