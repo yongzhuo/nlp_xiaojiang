@@ -16,7 +16,7 @@ label = 2
 l2 = 0.32
 
 epochs = 100
-batch_size = 128
+batch_size = 2
 path_save_model = 'model_webank_tdt/bert_avt_cnn.h5' # 'bert_bi_lstm_pair.h5'
 
 # text-cnn
