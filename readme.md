@@ -22,6 +22,13 @@
     - bert + r-cnn(keras) approach 0.78~0.79% acc of weBank Intelligent Customer Service Question Matching Competition
     - bert + avt-cnn(keras) approach 0.78~0.79% acc of weBank Intelligent Customer Service Question Matching Competition
 
+# Ner
+    - bert命名实体提取(bert12层embedding + bilstm + crf)
+        - args.py(配置一些参数)
+        - keras_bert_embedding.py(bert embedding)
+        - keras_bert_layer.py(layer层, 主要有CRF和NonMaskingLayer)
+        - keras_bert_ner_bi_lstm.py(主函数, 定义模型、数据预处理和训练预测等)
+        - layer_crf_bojone.py(CRF层, 未使用)
 
 # FeatureProject
     - bert句向量、文本相似度
@@ -82,6 +89,7 @@
         - w2v_model_wiki_char.vec、w2v_model_wiki_word.vec都只有部分
     - corpus
         github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
+        - ner(train、dev、test----人民日报语料)
         - webank(train、dev、test)
         - 小黄鸡和gossip问答预料（数据没清洗）,chicken_and_gossip.txt
         - 微众银行和支付宝文本相似度竞赛数据， sim_webank.csv
