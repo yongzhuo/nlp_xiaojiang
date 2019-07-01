@@ -74,3 +74,9 @@ model_ckpt_cg_anti_word=projectdir + '/ChatBot/chatbot_generate/seq2seq/model_se
 path_webank_train=projectdir + '/Data/corpus/webank/train.csv'
 path_webank_dev=projectdir + '/Data/corpus/webank/dev.csv'
 path_webank_test=projectdir + '/Data/corpus/webank/test.csv'
+
+# ner chinese_people_daily
+path_ner_people_train = projectdir + '/Data/corpus/ner/people_daily/people.train'
+path_ner_people_dev = projectdir + '/Data/corpus/ner/people_daily/people.dev'
+path_ner_people_test = projectdir + '/Data/corpus/ner/people_daily/people.test'
+
