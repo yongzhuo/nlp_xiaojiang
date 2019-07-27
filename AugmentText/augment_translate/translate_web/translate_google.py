@@ -4,12 +4,14 @@
 # @author   :Mo
 # @function :回译调用谷歌翻译，模拟google token访问
 
-from conf.augment_constant import language_short_google
-from utils.text_tools import judge_translate_english
 import logging as logger
 import urllib.parse as parse
-import requests
+
 import execjs
+import requests
+
+from nlp_xiaojiang.conf.augment_constant import language_short_google
+from nlp_xiaojiang.utils.text_tools import judge_translate_english
 
 
 class GoogleToken:
@@ -71,7 +73,9 @@ def open_url(url):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) '
                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'}
     req = requests.get(url=url, headers=headers)
-    return req.content.decode('utf-8')
+    # print('req.txt:')
+    # print(req.text.encode('gbk', 'ignore').decode('gbk'))
+    return req # .content.decode('utf-8')
 
 
 def max_length(content):
@@ -82,7 +86,9 @@ def max_length(content):
     """
     if len(content) > 4891:
         logger.info("翻译文本超过限制！")
-        return
+        return 4891
+    else:
+        return None
 
 
 def translate_result(result):
@@ -91,11 +97,11 @@ def translate_result(result):
     :param result: str
     :return: str
     """
-    str_end = result.find("\",")
-    if str_end > 4:
-        return result[4:str_end]
-    else:
-        return None
+    result_last = ''
+    for res in result[0]:
+        if res[0]:
+            result_last += res[0]
+    return result_last
 
 
 def any_to_any_translate(content, from_='zh-CN', to_='en'):
@@ -106,14 +112,17 @@ def any_to_any_translate(content, from_='zh-CN', to_='en'):
     :param to_:   str, target language
     :return: str, result of translate
     """
-    max_length(content)
+    max_len = max_length(content)
+    if max_len:
+        content = content[0:max_len]
     tk = google_tokn.get_google_token(content)
     content = parse.quote(content)
     url = "http://translate.google.cn/translate_a/single?client=t&sl={0}&tl={1}" \
           "&hl=zh-CN&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&" \
           "ie=UTF-8&oe=UTF-8&source=btn&ssel=3&tsel=3&kc=0&tk={2}&q={3}".format(from_, to_, tk, content)
     result = open_url(url)
-    res = translate_result(result)
+    result_json =  result.json()
+    res = translate_result(result_json)
     return res
 
 
@@ -133,16 +142,22 @@ def any_to_any_translate_back(content, from_='zh-CN', to_='en'):
 if __name__ == '__main__':
     google_tokn = GoogleToken()
     while True:
-        sen_org = "过路蜻蜓喜欢口袋巧克力，这是什么意思"
+        # sen_org = "过路蜻蜓喜欢口袋巧克力，这是什么意思"
+        sen_org = "此外，李奇霖还认为，MLF期限是6个月，逆回购是7天，考虑到外汇占款流出的是长期限流动性，" \
+                  "因此，无论哪一种货币投放模式都无法替代降准，降准的期限理论上是“无穷期”的。" \
+                  "从资金利率看，MLF资金利率在3.35%，比起降准释放的“无成本”流动性仍然偏高，" \
+                  "经济下行压力之下，实体能提供的高收益资产有限，较高的资金利率能否缓解外汇占款对信用派生的收缩作用，也是有疑虑的。" \
+                  "“等汇率端稍见稳定后，我们能看到降准的出现，幅度约为100BP，时点预计在9月上旬。"
+
         for language_short_google_one in language_short_google:
             text_translate = any_to_any_translate_back(sen_org, from_='zh', to_=language_short_google_one)
             judge = judge_translate_english(sen_org, text_translate)
             if judge:
                 print(language_short_google_one + " " + "True")
-                print(text_translate)
+                print(text_translate.encode('gbk', 'ignore').decode('gbk'))
             else:
                 print(language_short_google_one + " " + "False")
-                print(text_translate)
+                print(text_translate.encode('gbk', 'ignore').decode('gbk'))
 #测试结果
 # en False
 # 我喜欢口袋巧克力，这是什么意思？
