@@ -4,16 +4,18 @@
 # @author   :Mo
 # @function :extract feature of bert and keras
 
-from conf.feature_config import gpu_memory_fraction, config_name, ckpt_name, vocab_file, max_seq_len, layer_indexes
-from keras_bert import load_trained_model_from_checkpoint, Tokenizer
-from FeatureProject.bert.layers_keras import NonMaskingLayer
-import keras.backend.tensorflow_backend as ktf_keras
-import keras.backend as k_keras
-from keras.models import Model
-import tensorflow as tf
-import numpy as np
 import codecs
 import os
+
+import keras.backend.tensorflow_backend as ktf_keras
+import numpy as np
+import tensorflow as tf
+from keras.layers import Add
+from keras.models import Model
+from keras_bert import load_trained_model_from_checkpoint, Tokenizer
+
+from FeatureProject.bert.layers_keras import NonMaskingLayer
+from conf.feature_config import gpu_memory_fraction, config_name, ckpt_name, vocab_file, max_seq_len, layer_indexes
 
 # 全局使用，使其可以django、flask、tornado等调用
 graph = None
@@ -41,16 +43,16 @@ class KerasBertVector():
         # lay = model.layers
         #一共104个layer，其中前八层包括token,pos,embed等，
         # 每4层（MultiHeadAttention,Dropout,Add,LayerNormalization）
-        # 一共12层transformer
+        # 一共24层
         layer_dict = [7]
         layer_0 = 7
         for i in range(12):
-            layer_0 = layer_0 + 8
+            layer_0 = layer_0 + 4
             layer_dict.append(layer_0)
         # 输出它本身
         if len(layer_indexes) == 0:
             encoder_layer = model.output
-        # 分类如果只有一层，就只取倒数第二层的weight；取得不正确，就默认取倒数第二层出
+        # 分类如果只有一层，就只取最后那一层的weight，取得不正确
         elif len(layer_indexes) == 1:
             if layer_indexes[0] in [i+1 for i in range(12)]:
                 encoder_layer = model.get_layer(index=layer_dict[layer_indexes[0]]).output
@@ -58,13 +60,14 @@ class KerasBertVector():
                 encoder_layer = model.get_layer(index=layer_dict[-2]).output
         # 否则遍历需要取的层，把所有层的weight取出来并拼接起来shape:768*层数
         else:
-            # layer_indexes must be [1,2,3,......12]
+            # layer_indexes must be [1,2,3,......12...24]
             # all_layers = [model.get_layer(index=lay).output if lay is not 1 else model.get_layer(index=lay).output[0] for lay in layer_indexes]
             all_layers = [model.get_layer(index=layer_dict[lay-1]).output if lay in [i+1 for i in range(12)]
-                          else model.get_layer(index=layer_dict[-2]).output  #如果给出不正确，就默认输出最后一层
+                          else model.get_layer(index=layer_dict[-1]).output  #如果给出不正确，就默认输出最后一层
                           for lay in layer_indexes]
             print(layer_indexes)
             print(all_layers)
+            # 其中layer==1的output是格式不对，第二层输入input是list
             all_layers_select = []
             for all_layers_one in all_layers:
                 all_layers_select.append(all_layers_one)
@@ -114,17 +117,19 @@ class KerasBertVector():
         # 相当于pool，采用的是https://github.com/terrifyzhao/bert-utils/blob/master/graph.py
         mul_mask = lambda x, m: x * np.expand_dims(m, axis=-1)
         masked_reduce_mean = lambda x, m: np.sum(mul_mask(x, m), axis=1) / (np.sum(m, axis=1, keepdims=True) + 1e-9)
-        pooled = masked_reduce_mean(predicts[0][-1], input_masks)
+        pooled = masked_reduce_mean(predicts[0], input_masks)
         pooled = pooled.tolist()
         print('bert:', pooled)
         return pooled
 
 
 if __name__ == "__main__":
+    # 一次只提取一个句子
     bert_vector = KerasBertVector()
-    pooled = bert_vector.bert_encode(['你好呀', '你是谁'])
+    pooled = bert_vector.bert_encode(['你是谁呀'])
     print(pooled)
     while True:
         print("input:")
         ques = input()
         print(bert_vector.bert_encode([ques]))
+
