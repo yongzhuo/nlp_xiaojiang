@@ -27,7 +27,7 @@ path_tag_li = 'models/bilstm/tag_l_i.pkl'
 gpu_memory_fraction = 0.32
 
 # ner当然是所有层都会提取啦，句向量默认取倒数第二层的输出值作为句向量
-layer_indexes = [i for i in range(13)] # [-2]
+layer_indexes = [i+1 for i in range(13)] # [-2]
 
 # 序列的最大程度
 max_seq_len = 50

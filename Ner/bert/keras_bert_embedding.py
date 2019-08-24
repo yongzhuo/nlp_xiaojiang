@@ -49,7 +49,7 @@ class KerasBertEmbedding():
         # 一共12层+最开始未处理那层(可以理解为input)
         layer_dict = [7]
         layer_0 = 7
-        for i in range(13):
+        for i in range(12):
             layer_0 = layer_0 + 8
             layer_dict.append(layer_0)
 
@@ -58,7 +58,7 @@ class KerasBertEmbedding():
             encoder_layer = model.output
         # 分类如果只有一层，就只取最后那一层的weight，取得不正确
         elif len(layer_indexes) == 1:
-            if layer_indexes[0] in [i+1 for i in range(12)]:
+            if layer_indexes[0] in [i+1 for i in range(13)]:
                 encoder_layer = model.get_layer(index=layer_dict[layer_indexes[0]]).output
             else:
                 encoder_layer = model.get_layer(index=layer_dict[-1]).output

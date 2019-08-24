@@ -42,28 +42,28 @@ class KerasBertVector():
         print(len(model.layers))
         # lay = model.layers
         #一共104个layer，其中前八层包括token,pos,embed等，
-        # 每4层（MultiHeadAttention,Dropout,Add,LayerNormalization）
-        # 一共24层
+        # 每8层（MultiHeadAttention,Dropout,Add,LayerNormalization） resnet
+        # 一共12层
         layer_dict = [7]
         layer_0 = 7
         for i in range(12):
-            layer_0 = layer_0 + 4
+            layer_0 = layer_0 + 8
             layer_dict.append(layer_0)
         # 输出它本身
         if len(layer_indexes) == 0:
             encoder_layer = model.output
         # 分类如果只有一层，就只取最后那一层的weight，取得不正确
         elif len(layer_indexes) == 1:
-            if layer_indexes[0] in [i+1 for i in range(12)]:
+            if layer_indexes[0] in [i+1 for i in range(13)]:
                 encoder_layer = model.get_layer(index=layer_dict[layer_indexes[0]]).output
             else:
-                encoder_layer = model.get_layer(index=layer_dict[-2]).output
+                encoder_layer = model.get_layer(index=layer_dict[-1]).output
         # 否则遍历需要取的层，把所有层的weight取出来并拼接起来shape:768*层数
         else:
-            # layer_indexes must be [1,2,3,......12...24]
+            # layer_indexes must be [1,2,3,......13]
             # all_layers = [model.get_layer(index=lay).output if lay is not 1 else model.get_layer(index=lay).output[0] for lay in layer_indexes]
-            all_layers = [model.get_layer(index=layer_dict[lay-1]).output if lay in [i+1 for i in range(12)]
-                          else model.get_layer(index=layer_dict[-1]).output  #如果给出不正确，就默认输出最后一层
+            all_layers = [model.get_layer(index=layer_dict[lay-1]).output if lay in [i+1 for i in range(13)]
+                          else model.get_layer(index=layer_dict[-1]).output  # 如果给出不正确，就默认输出最后一层
                           for lay in layer_indexes]
             print(layer_indexes)
             print(all_layers)

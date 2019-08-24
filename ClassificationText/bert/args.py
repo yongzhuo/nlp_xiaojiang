@@ -21,7 +21,7 @@ path_save_model = 'model_webank_tdt/bert_avt_cnn.h5' # 'bert_bi_lstm_pair.h5'
 
 # text-cnn
 filters = [3, 4, 5]
-num_filters = 512
+num_filters = 300
 
 
 
@@ -29,7 +29,7 @@ num_filters = 512
 gpu_memory_fraction = 0.3
 
 # 默认取倒数第二层的输出值作为句向量
-layer_indexes = [-2]
+layer_indexes = [-1]
 
 # 序列的最大程度，单文本建议把该值调小
 max_seq_len = 98
