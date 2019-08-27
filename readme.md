@@ -33,7 +33,7 @@
 # FeatureProject
     - bert句向量、文本相似度
         - bert/extract_keras_bert_feature.py:提取bert句向量特征
-        - bert/tet_bert_keras_sim.py:测试bert句向量cosin相似度
+        - bert/tet_bert_keras_sim.py:测试xlnet句向量cosin相似度
     - xlnet句向量、文本相似度
         - xlnet/extract_keras_xlnet_feature.py:提取bert句向量特征
         - xlnet/tet_xlnet_keras_sim.py:测试bert句向量cosin相似度
