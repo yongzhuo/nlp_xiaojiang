@@ -34,6 +34,9 @@
     - bert句向量、文本相似度
         - bert/extract_keras_bert_feature.py:提取bert句向量特征
         - bert/tet_bert_keras_sim.py:测试bert句向量cosin相似度
+    - xlnet句向量、文本相似度
+        - xlnet/extract_keras_xlnet_feature.py:提取bert句向量特征
+        - xlnet/tet_xlnet_keras_sim.py:测试bert句向量cosin相似度
     - normalization_util指的是数据归一化
         - 0-1归一化处理
         - 均值归一化
@@ -83,6 +86,8 @@
     - chinese_L-12_H-768_A-12（谷歌预训练好的模型）
        github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
        解压后就可以啦
+    - chinese_xlnet_mid_L-24_H-768_A-12(哈工大训练的中文xlnet, mid, 24层, wiki语料+通用语料)
+        - 下载地址[https://github.com/ymcui/Chinese-PreTrained-XLNet](https://github.com/ymcui/Chinese-PreTrained-XLNet)
     - chinese_vector
         github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
         - 截取的部分word2vec训练词向量（自己需要下载全效果才会好）
