@@ -38,8 +38,10 @@ from ClassificationText.bert import args
 from conf.feature_config import config_name, ckpt_name, vocab_file, max_seq_len, layer_indexes, gpu_memory_fraction
 
 
+#from trains import Task
+#task = Task.init(project_name="文本相似度", task_name="平安医疗")
 def attention(inputs, single_attention_vector=False):
-    # attention机制
+    # attention机制 
     time_steps = k_keras.int_shape(inputs)[1]
     input_dim = k_keras.int_shape(inputs)[2]
     x = Permute((2, 1))(inputs)
@@ -229,7 +231,9 @@ def classify_pair_corpus_webank(bert_model, path_webank):
         label = q_2_l[-1]
         questions.append([text_preprocess(q_1), text_preprocess(q_2)])
         label_int = int(label)
-        labels.append([0, 1] if label_int == 1 else [1, 0])
+        label_arr = [0] * args.label
+        label_arr[label_int] = 1
+        labels.append(label_arr)
 
     questions = np.array(questions)
     labels = np.array(labels)
@@ -265,9 +269,9 @@ def tet():
     labels_pred_np_arg = np.argmax(labels_pred_np, axis=1)
     labels_test_np = np.array(labels_test)
     labels_test_np_arg = np.argmax(labels_test_np, axis=1)
-    target_names = ['不相似', '相似']
-    report_predict = classification_report(labels_test_np_arg, labels_pred_np_arg,
-                                           target_names=target_names, digits=9)
+    #target_names = ['不相似', '相似'] 
+    #report_predict = classification_report(labels_test_np_arg, labels_pred_np_arg, target_names=target_names, digits=9)
+    report_predict = classification_report(labels_test_np_arg, labels_pred_np_arg, digits=9)
     print(report_predict)
 
 
@@ -276,20 +280,21 @@ def predict():
     bert_model = BertTextCnnModel()
     bert_model.load_model()
     pred = bert_model.predict(sen_1='jy', sen_2='myz')
-    print(pred[0][1])
+    print(pred[0])
     while True:
         print("sen_1: ")
         sen_1 = input()
         print("sen_2: ")
         sen_2 = input()
         pred = bert_model.predict(sen_1=sen_1, sen_2=sen_2)
-        print(pred[0][1])
+        lable = np.argmax(pred)
+        print(lable)
 
 
 if __name__ == "__main__":
-    train()
-    # tet()
-    # predict()
+    #train()
+    #tet()
+    predict()
 
 # text cnn, real stop
 # 100000/100000 [==============================] - 1546s 15ms/step - loss: 0.4168 - acc: 0.8108 - val_loss: 0.4379 - val_acc: 0.8008
