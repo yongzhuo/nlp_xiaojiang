@@ -162,7 +162,7 @@ def create_matrix_org_np(sen_count, word2vec_model, qa_path, matrix_ques_path_wo
         ques = getChinese(qa_dail_one.split('\t')[0])
         # questions.append(ques)
         word_list, flag_list = word_flag_cut(ques)
-        sentence_vec = encoding_basic_question(word2vec_model, word_list, flag_list)
+        sentence_vec = basic_questions_encoding(word2vec_model, word_list, flag_list)
         matrix_ques.append(sentence_vec)
         if len(matrix_ques)%sen_count == 0 and len(matrix_ques) != 0:
             print("count: " + str(count))
