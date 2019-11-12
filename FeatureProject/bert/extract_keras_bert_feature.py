@@ -111,6 +111,7 @@ class KerasBertVector():
         with graph.as_default():
             predicts = model.predict([input_ids, input_type_ids], batch_size=1)
         print(predicts.shape)
+        tokens_text = tokens_text if len(tokens_text) <= self.max_seq_len - 2 else tokens_text[:self.max_seq_len - 2]
         for i, token in enumerate(tokens_text):
             print(token, [len(predicts[0][i].tolist())], predicts[0][i].tolist())
 

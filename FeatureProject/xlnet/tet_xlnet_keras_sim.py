@@ -37,6 +37,10 @@ def sim_two_question():
     import math
 
     def cosine_distance(v1, v2): # 余弦距离
+        if type(v1)==list:
+            v1 = np.array(v1)
+        if type(v2)==list:
+            v2 = np.array(v2)
         if v1.all() and v2.all():
             return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
         else:

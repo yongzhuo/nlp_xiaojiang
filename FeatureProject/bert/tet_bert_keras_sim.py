@@ -16,11 +16,11 @@ def calculate_count():
     bert_vector = KerasBertVector()
     print("bert start ok!")
     time_start = time.time()
-    for i in range(1000):
+    for i in range(10):
         vector = bert_vector.bert_encode(["jy，你知道吗，我一直都很喜欢你呀，在一起在一起在一起，哈哈哈哈"])
 
     time_end = time.time()
-    time_avg = (time_end-time_start)/1000
+    time_avg = (time_end-time_start)/10
     print(vector)
     print(time_avg)
     # 0.12605296468734742  win10 gpu avg
@@ -37,6 +37,11 @@ def sim_two_question():
     import math
 
     def cosine_distance(v1, v2): # 余弦距离
+        if type(v1)==list:
+            v1 = np.array(v1)
+        if type(v2)==list:
+            v2 = np.array(v2)
+
         if v1.all() and v2.all():
             return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
         else:
