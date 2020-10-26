@@ -91,7 +91,8 @@
     - chinese_vector
         github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
         - 截取的部分word2vec训练词向量（自己需要下载全效果才会好）
-        - w2v_model_wiki_char.vec、w2v_model_wiki_word.vec都只有部分
+        - w2v_model_wiki_char.vec、w2v_model_wiki_word.vec都只有部分，词向量w2v_model_wiki_word.vec可以用这个下载地址的替换[https://pan.baidu.com/s/14JP1gD7hcmsWdSpTvA3vKA](https://pan.baidu.com/s/14JP1gD7hcmsWdSpTvA3vKA)
+
     - corpus
         github项目中只是上传部分数据，需要的前往链接: https://pan.baidu.com/s/1I3vydhmFEQ9nuPG2fDou8Q 提取码: rket
         - ner(train、dev、test----人民日报语料)
