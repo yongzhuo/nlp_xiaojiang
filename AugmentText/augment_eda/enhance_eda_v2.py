@@ -12,7 +12,7 @@ import jieba
 
 
 KEY_WORDS = ["macropodus"] # 不替换同义词的词语
-ENGLISH = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+ENGLISH = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 def is_english(text):
@@ -22,7 +22,7 @@ def is_english(text):
     :return: boolean, True or False
     """
     try:
-        text_r = text.replace(' ', '').strip()
+        text_r = text.replace(" ", "").strip()
         for tr in text_r:
             if tr in ENGLISH:
                 continue
@@ -39,7 +39,7 @@ def is_number(text):
     :return: boolean, True or False 
     """
     try:
-        text_r = text.replace(' ', '').strip()
+        text_r = text.replace(" ", "").strip()
         for tr in text_r:
             if tr.isdigit():
                 continue
@@ -57,7 +57,7 @@ def get_syn_word(word):
     """
     if not is_number(word.strip()) or not is_english(word.strip()):
         word_syn = synonyms.nearby(word)
-        word_syn = word_syn if not word_syn else [word]
+        word_syn = word_syn[0] if len(word_syn[0]) else [word]
         return word_syn
     else:
         return [word]
@@ -124,7 +124,7 @@ def word_swap(words, n=1):
     while count < n:
         idx_select = random.sample(idxs, 2)
         temp = words[idx_select[0]]
-        words[idx_select[0]] =  words[idx_select[1]]
+        words[idx_select[0]] = words[idx_select[1]]
         words[idx_select[1]] = temp
         count += 1
     return words
@@ -182,7 +182,7 @@ def eda(text, n=1, use_syn=True):
     return sens_4
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sens = "".join(["macropodus", "是不是", "哪个", "啦啦",
                     "只需做好这四点，就能让你养的天竺葵全年花开不断！"])
     print(eda(sens))
