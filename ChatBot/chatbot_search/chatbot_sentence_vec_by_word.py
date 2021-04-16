@@ -5,7 +5,14 @@
 # @function :chatbot based search, encode sentence_vec by word
 
 
+# 适配linux
+import sys
 import os
+path_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+sys.path.append(path_root)
+print(path_root)
+
+
 import pickle
 
 import gensim
@@ -15,10 +22,10 @@ import numpy as np
 from gensim import matutils
 from numpy import float32 as numpy_type
 
-from nlp_xiaojiang.conf.path_config import matrix_ques_part_path
-from nlp_xiaojiang.conf.path_config import projectdir, chicken_and_gossip_path
-from nlp_xiaojiang.conf.path_config import w2v_model_merge_short_path, w2v_model_wiki_word_path
-from nlp_xiaojiang.utils.text_tools import txtRead, getChinese
+from conf.path_config import matrix_ques_part_path
+from conf.path_config import projectdir, chicken_and_gossip_path
+from conf.path_config import w2v_model_merge_short_path, w2v_model_wiki_word_path
+from utils.text_tools import txtRead, getChinese
 
 
 def load_word2vec_model(path, bin=False, limit=None):
@@ -202,6 +209,18 @@ if __name__ == '__main__':
     print("np.loadtxt(matrix_ques_part_path) end!")
     # 标准问句矩阵初始化和预处理
     matrix_org_norm, matrix_org_index, top_vec = basic_questions_matrix_init(matrix_ques, top_vec=20)
+
+    ques_clean = getChinese("小姜机器人叫什么呀")
+    word_list, flag_list = word_flag_cut(ques_clean)
+    sentence_vec = basic_questions_encoding(word2vec_model, word_list, flag_list)
+    top_20_qid = calculate_text_similar(sentence_vec, matrix_org_norm, matrix_org_index, top_vec=top_vec)
+    try:
+        print("小姜机器人: " + syn_qa_dails[top_20_qid[0][0]].strip().split("\t")[1])
+        print([(syn_qa_dails[top_20_qid[i][0]].strip().split("\t")[0],
+                syn_qa_dails[top_20_qid[i][0]].strip().split("\t")[1]) for i in range(len(top_20_qid))])
+    except Exception as e:
+        # 有的字符可能打不出来
+        print(str(e))
 
     while True:
         print("你: ")

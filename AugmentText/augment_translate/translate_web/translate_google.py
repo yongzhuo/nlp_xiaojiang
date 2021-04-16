@@ -4,14 +4,23 @@
 # @author   :Mo
 # @function :回译调用谷歌翻译，模拟google token访问
 
+
+# 适配linux
+import sys
+import os
+path_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+sys.path.append(path_root)
+print(path_root)
+
+
 import logging as logger
 import urllib.parse as parse
 
 import execjs
 import requests
 
-from nlp_xiaojiang.conf.augment_constant import language_short_google
-from nlp_xiaojiang.utils.text_tools import judge_translate_english
+from conf.augment_constant import language_short_google
+from utils.text_tools import judge_translate_english
 
 
 class GoogleToken:
