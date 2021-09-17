@@ -22,7 +22,7 @@ if platform.system().lower() == 'windows':
     BERT_DIR = "D:/soft_install/dataset/bert-model/zuiyi/chinese_simbert_L-4_H-312_A-12"
     # BERT_DIR = "D:/soft_install/dataset/bert-model/zuiyi/chinese_simbert_L-6_H-384_A-12"
 else:
-    BERT_DIR = "/bert/chinese_L-12_H-768_A-12"
+    BERT_DIR = "bert/chinese_L-12_H-768_A-12"
     ee = 0
 
 SAVE_DIR = path_root + "/bert_white"
@@ -39,6 +39,7 @@ bert_white_config = {
 "dict_path": "vocab.txt",
 # 预测需要的文件路径
 "save_dir": SAVE_DIR,
+"path_tfserving": "chatbot_tfserving/1",
 "path_docs_encode": "qa.docs.encode.npy",
 "path_answers": "qa.answers.json",
 "path_qa_idx":  "qa.idx.json",
@@ -58,7 +59,7 @@ bert_white_config = {
 "maxlen": 128,         # 最大文本长度
 "ues_white": False,    # 是否使用白化
 "use_annoy": False,    # 是否使用annoy
-"use_faiss": True,     # 是否使用faiss
+"use_faiss": False,     # 是否使用faiss
 "verbose": True,       # 是否显示编码过程日志-batch
 
 "kernel": None,       # bert-white编码后的参数, 可降维
