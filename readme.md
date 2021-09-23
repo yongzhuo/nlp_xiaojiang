@@ -7,6 +7,7 @@
     - HMM-marko（质量较差）
     - syntax（依存句法、句法、语法书）（简单句还可）
     - seq2seq（深度学习同义句生成，效果不理想，seq2seq代码大都是 [https://github.com/qhduan/just_another_seq2seq] 的，效果不理想）
+    - 预训练(UNILM生成、开源模型回译)
     
 # ChatBot
     - 检索式ChatBot

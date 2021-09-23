@@ -1,0 +1,3 @@
+tensorflow==1.15.2
+bert4keras==0.10.7
+

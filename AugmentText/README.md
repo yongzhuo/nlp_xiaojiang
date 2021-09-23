@@ -51,6 +51,18 @@
     - bert
     - transformer
     - GAN
+    
+## 预训练模型-UMILM
+  使用BERT(UNILM)的生成能力, 即BERT的NSP句对任务 
+    - simbert(bert + unilm + adv):  [https://github.com/ZhuiyiTechnology/simbert](https://github.com/ZhuiyiTechnology/simbert)
+    - simbert: [鱼与熊掌兼得：融合检索和生成的SimBERT模型](https://spaces.ac.cn/archives/7427)
+    - roformer-sim:  [https://github.com/ZhuiyiTechnology/roformer-sim](https://github.com/ZhuiyiTechnology/roformer-sim)
+    - simbert-v2(roformer + unilm + adv + bart + distill): [SimBERTv2来了！融合检索和生成的RoFormer-Sim模型](https://spaces.ac.cn/archives/8454)
+    
+## 回译(开源模型效果不是很好)
+  中文转化成其他语言(如英语), 其他语言(如英语)转化成中文, Helsinki-NLP开源的预训练模型
+    - opus-mt-en-zh:  https://huggingface.co/Helsinki-NLP/opus-mt-en-zh
+    - opus-mt-zh-en:  https://huggingface.co/Helsinki-NLP/opus-mt-zh-en
 
 
 # 参考/感谢
